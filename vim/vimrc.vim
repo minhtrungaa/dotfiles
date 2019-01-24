@@ -1,8 +1,8 @@
 call plug#begin('~/.vim/plugged')
 
 " specific system
-	Plug 'kien/ctrlp.vim'
-	Plug 'felikz/ctrlp-py-matcher'
+"Plug 'kien/ctrlp.vim'
+"Plug 'felikz/ctrlp-py-matcher'
 
 " npm instal at .vim/bundle/tern_for_vim
 Plug 'marijnh/tern_for_vim'
@@ -34,6 +34,9 @@ Plug 'MarcWeber/vim-addon-mw-utils'
 Plug 'tomtom/tlib_vim'
 Plug 'honza/vim-snippets'
 Plug 'vasconcelloslf/vim-interestingwords'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
+Plug 'ap/vim-css-color'
 Plug 'garbas/vim-snipmate' "{{{
   imap <C-J> <esc>a<Plug>snipMateNextOrTrigger
   smap <C-J> <Plug>snipMateNextOrTrigger
