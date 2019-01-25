@@ -9,6 +9,7 @@ Plug 'marijnh/tern_for_vim'
 Plug 'moll/vim-node'
 Plug 'sheerun/vim-polyglot'
 " Plug 'ervandew/supertab'
+Plug 'itchyny/lightline.vim'
 Plug 'leafgarland/typescript-vim'
 Plug 'flazz/vim-colorschemes'
 Plug 'valloric/matchtagalways'
@@ -27,7 +28,7 @@ Plug 'mattn/emmet-vim'
 Plug 'easymotion/vim-easymotion'
 Plug 'tpope/vim-surround'
 Plug 'terryma/vim-multiple-cursors'
-Plug 'vim-airline/vim-airline-themes'
+"Plug 'vim-airline/vim-airline-themes'
 Plug 'vim-airline/vim-airline'
 Plug 'airblade/vim-gitgutter'
 Plug 'MarcWeber/vim-addon-mw-utils'
@@ -43,7 +44,8 @@ Plug 'garbas/vim-snipmate' "{{{
 "}}}
 Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' } "{{{
-  nnoremap <silent> <F4> :NERDTreeToggle<CR>
+  nnoremap <silent> <c-b> :NERDTreeToggle<cr>
+  "nnoremap <silent> <F4> :NERDTreeToggle<CR>
   nnoremap <silent> <F5> :NERDTreeFind<CR>
 "}}}
 Plug 'Valloric/YouCompleteMe', { 'do': './install.py --tern-completer' }
@@ -60,13 +62,13 @@ let g:tern_map_keys=1
 let g:tern_show_argument_hints='on_hold'
 
 " vim setting
-syntax on
 set nocompatible
 set encoding=utf8
 set backspace=indent,eol,start
 " Show line number
 set number relativenumber
-set listchars=trail:.,tab:>\ ,eol:$
+"set listchars=trail:.,tab:>\ ,eol:$
+set list
 set lazyredraw
 set laststatus=2
 set statusline=%-4m%f\ %y\ \ %=%{&ff}\ \|\ %{&fenc}\ [%l:%c]
@@ -103,48 +105,28 @@ let g:NERDTreeDirArrowCollapsible = '▾'
 filetype plugin indent on
 
 
-" update style theme for airline and backspace button
-let g:airline#extensions#tabline#enabled = 1
-let g:airline_powerline_fonts = 1
-let g:airline_theme = 'onedark'
 
 
-" GUI & Terminal setttings {{{
-if has("gui_running")
-  if has("gui_macvim")
-    set guifont=DejaVuSansMonoforPowerline:h14
-  elseif has("gui_win32")
-    autocmd GUIEnter * simalt ~x " open maximize in Windows
-    set guifont=DejaVuSansMonoforPowerline:h14
-
-  endif
-  set guioptions= " disable all UI options
-  set guicursor+=a:blinkon0 " disable blinking cursor
-  set ballooneval
-  autocmd GUIEnter * set novisualbell t_vb=
-else
-  set noerrorbells novisualbell t_vb=
-  set term=xterm
-  set t_ut= " setting for looking properly in tmux
-  set t_BE= " disable bracketed-paste mode
-  let &t_Co = 256
-endif
-set t_Co=256
-"set t_AB=^[[48;5;%dm
-"set t_AF=^[[38;5;%dm
-colorscheme onedark "{{{
+"set noerrorbells novisualbell t_vb=
+"set term=xterm
+"set t_ut= " setting for looking properly in tmux
+"set t_BE= " disable bracketed-paste mode
+"let &t_Co = 256
+"set t_Co=256
+"colorscheme onedark "{{{
   " Custom colors
-  highlight DiffText cterm=bold ctermfg=255 ctermbg=196
+  "highlight DiffText cterm=bold ctermfg=255 ctermbg=196
+  let g:onedark_termcolors = 256
 "}}}
 
 "}}}
-if has('gui_running')
-  set list listchars=tab:▶‒,nbsp:∙,trail:∙,extends:▶,precedes:◀
-  let &showbreak = '↳'
-else
+"if has('gui_running')
+  "set list listchars=tab:▶‒,nbsp:∙,trail:∙,extends:▶,precedes:◀
+  "let &showbreak = '↳'
+"else
   set list listchars=tab:>-,nbsp:.,trail:.,extends:>,precedes:<
   let &showbreak = '^'
-endif
+"endif
 
 " javascript lint setup
 let g:ale_sign_error = '●' " Less aggressive than the default '>>'
@@ -187,3 +169,30 @@ let g:ycm_add_preview_to_completeopt = 0
 "    set termguicolors
 "  endif
 "endif
+set hlsearch!
+
+nnoremap <F3> :set hlsearch!<CR>
+
+if (empty($TMUX))
+  if (has("nvim"))
+    "For Neovim 0.1.3 and 0.1.4 < https://github.com/neovim/neovim/pull/2198 >
+    let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+  endif
+  "For Neovim > 0.1.5 and Vim > patch 7.4.1799 < https://github.com/vim/vim/commit/61be73bb0f965a895bfb064ea3e55476ac175162 >
+  "Based on Vim patch 7.4.1770 (`guicolors` option) < https://github.com/vim/vim/commit/8a633e3427b47286869aa4b96f2bfc1fe65b25cd >
+  " < https://github.com/neovim/neovim/wiki/Following-HEAD#20160511 >
+  if (has("termguicolors"))
+    set termguicolors
+  endif
+endif
+
+" update style theme for airline and backspace button
+" Colorscheme and themes
+let g:lightline = {
+  \ 'colorscheme': 'onedark',
+  \ }
+let g:airline#extensions#tabline#enabled = 1
+let g:airline_powerline_fonts = 1
+let g:airline_theme = 'onedark'
+syntax on
+colorscheme onedark
