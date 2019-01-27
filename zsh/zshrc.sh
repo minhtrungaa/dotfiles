@@ -9,6 +9,7 @@ export PATH=$PATH:$ANDROID_HOME/tools/bin
 export PATH=$PATH:$ANDROID_HOME/platform-tools
 export PATH=$HOME/bin:usr/local/bin:$PATH
 export PATH=$HOME/.local/share/umake/bin:$PATH
+export TERM=xterm-256color
 export TERMINAL="terminator"
 export VISUAL=vim
 export EDITOR="$VISUAL"
@@ -20,6 +21,8 @@ plugins=(
   zsh-autosuggestions
   zsh-syntax-highlighting
 )
+
+#alias tmux="TERM=screen-256color-bce tmux"
 
 source $ZSH/oh-my-zsh.sh
 source ~/dotfiles/zsh/keybindings.sh

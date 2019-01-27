@@ -67,7 +67,6 @@ set encoding=utf8
 set backspace=indent,eol,start
 " Show line number
 set number relativenumber
-"set listchars=trail:.,tab:>\ ,eol:$
 set list
 set lazyredraw
 set laststatus=2
@@ -96,37 +95,19 @@ set autoindent
 set smarttab
 set updatetime=500
 set synmaxcol=400
-set tabstop=2 softtabstop=0 expandtab shiftwidth=2 smarttab
 set guifont=DejaVuSansMonoforPowerline:h14
+set spell spelllang=en_us
 
 " NerdTree config
 let g:NERDTreeDirArrowExpandable = '▸' 
 let g:NERDTreeDirArrowCollapsible = '▾'
 filetype plugin indent on
 
+let g:onedark_termcolors = 256
 
-
-
-"set noerrorbells novisualbell t_vb=
-"set term=xterm
-"set t_ut= " setting for looking properly in tmux
-"set t_BE= " disable bracketed-paste mode
-"let &t_Co = 256
-"set t_Co=256
-"colorscheme onedark "{{{
-  " Custom colors
-  "highlight DiffText cterm=bold ctermfg=255 ctermbg=196
-  let g:onedark_termcolors = 256
-"}}}
-
-"}}}
-"if has('gui_running')
-  "set list listchars=tab:▶‒,nbsp:∙,trail:∙,extends:▶,precedes:◀
-  "let &showbreak = '↳'
-"else
-  set list listchars=tab:>-,nbsp:.,trail:.,extends:>,precedes:<
-  let &showbreak = '^'
-"endif
+set listchars=eol:$,tab:▶‒,nbsp:∙,trail:∙,extends:▶,precedes:◀
+set list
+let &showbreak = '^'
 
 " javascript lint setup
 let g:ale_sign_error = '●' " Less aggressive than the default '>>'
@@ -173,21 +154,17 @@ set hlsearch!
 
 nnoremap <F3> :set hlsearch!<CR>
 
-if (empty($TMUX))
-  if (has("nvim"))
-    "For Neovim 0.1.3 and 0.1.4 < https://github.com/neovim/neovim/pull/2198 >
-    let $NVIM_TUI_ENABLE_TRUE_COLOR=1
-  endif
-  "For Neovim > 0.1.5 and Vim > patch 7.4.1799 < https://github.com/vim/vim/commit/61be73bb0f965a895bfb064ea3e55476ac175162 >
-  "Based on Vim patch 7.4.1770 (`guicolors` option) < https://github.com/vim/vim/commit/8a633e3427b47286869aa4b96f2bfc1fe65b25cd >
-  " < https://github.com/neovim/neovim/wiki/Following-HEAD#20160511 >
-  if (has("termguicolors"))
-    set termguicolors
-  endif
+if (has("nvim"))
+  let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+endif
+if (has("termguicolors"))
+  set termguicolors
 endif
 
 " update style theme for airline and backspace button
 " Colorscheme and themes
+set background=dark
+set t_Co=256
 let g:lightline = {
   \ 'colorscheme': 'onedark',
   \ }
