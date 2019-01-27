@@ -48,7 +48,7 @@ Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' } "{{{
   "nnoremap <silent> <F4> :NERDTreeToggle<CR>
   nnoremap <silent> <F5> :NERDTreeFind<CR>
 "}}}
-Plug 'Valloric/YouCompleteMe', { 'do': './install.py --tern-completer' }
+Plug 'Valloric/YouCompleteMe', { 'do': './install.py --tx-completer' }
 Plug 'junegunn/goyo.vim'
 Plug 'joshdick/onedark.vim'
 
@@ -96,7 +96,7 @@ set autoindent
 set smarttab
 set updatetime=500
 set synmaxcol=400
-set guifont=DejaVuSansMonoforPowerline:h14
+set guifont=DejaVu\ Sans\ Mono\ for\ Powerline:h14
 set spell spelllang=en_us
 
 " NerdTree config
