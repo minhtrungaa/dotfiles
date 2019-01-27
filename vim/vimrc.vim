@@ -50,6 +50,7 @@ Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' } "{{{
 "}}}
 Plug 'Valloric/YouCompleteMe', { 'do': './install.py --tern-completer' }
 Plug 'junegunn/goyo.vim'
+Plug 'joshdick/onedark.vim'
 
 call plug#end()
 
