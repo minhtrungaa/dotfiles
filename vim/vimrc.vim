@@ -49,7 +49,9 @@ Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' } "{{{
   nnoremap <silent> <F5> :NERDTreeFind<CR>
 "}}}
 Plug 'Valloric/YouCompleteMe', { 'do': './install.py --tx-completer' }
-Plug 'junegunn/goyo.vim'
+Plug 'junegunn/goyo.vim' "{{{
+  nnoremap <C-K> :Goyo<cr>
+"}}}
 Plug 'joshdick/onedark.vim'
 
 call plug#end()
