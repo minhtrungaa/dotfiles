@@ -106,8 +106,13 @@ filetype plugin indent on
 
 let g:onedark_termcolors = 256
 
-set listchars=eol:$,tab:▶‒,nbsp:∙,trail:∙,extends:▶,precedes:◀
 set list
+"set listchars=eol:¬,tab:▸\
+if has('gui_running')
+    set listchars=eol:¬,tab:▶\ ,trail:·,extends:\#,nbsp:.
+else
+    set listchars=eol:¬,tab:>.,trail:.,extends:\#,nbsp:.
+endif
 let &showbreak = '^'
 
 " javascript lint setup

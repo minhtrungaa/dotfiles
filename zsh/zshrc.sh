@@ -23,6 +23,7 @@ plugins=(
 )
 
 #alias tmux="TERM=screen-256color-bce tmux"
+alias vim="mvim -v"
 
 source $ZSH/oh-my-zsh.sh
 source ~/dotfiles/zsh/keybindings.sh
