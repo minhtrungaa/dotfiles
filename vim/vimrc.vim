@@ -58,7 +58,8 @@ call plug#end()
 
 " vim key binding
 " FZF
-nnoremap <c-p> :FZF<cr>
+"nnoremap <c-p> :FZF<cr>
+silent! nmap <C-P> :GFiles<CR>
 "enable keyboard shortcuts
 let g:tern_map_keys=1
 ""show argument hints
