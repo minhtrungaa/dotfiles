@@ -113,7 +113,8 @@ set list
 if has('gui_running')
     set listchars=eol:¬,tab:▶\ ,trail:·,extends:\#,nbsp:.
 else
-    set listchars=eol:¬,tab:>.,trail:.,extends:\#,nbsp:.
+    set listchars=tab:→\ ,eol:¬,trail:⋅,extends:❯,precedes:❮,nbsp:.
+    set showbreak=↪
 endif
 let &showbreak = '^'
 
