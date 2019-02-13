@@ -70,7 +70,6 @@ set encoding=utf8
 set backspace=indent,eol,start
 " Show line number
 set number relativenumber
-set list
 set lazyredraw
 set laststatus=2
 set statusline=%-4m%f\ %y\ \ %=%{&ff}\ \|\ %{&fenc}\ [%l:%c]
@@ -95,7 +94,6 @@ set switchbuf=useopen
 set mouse=a
 set breakindent
 set autoindent
-set smarttab
 set updatetime=500
 set synmaxcol=400
 set guifont=DejaVu\ Sans\ Mono\ for\ Powerline:h14
@@ -111,7 +109,6 @@ let g:onedark_termcolors = 256
 set listchars=eol:$,tab:▶‒,nbsp:∙,trail:∙,extends:▶,precedes:◀
 set list
 let &showbreak = '^'
-
 " javascript lint setup
 let g:ale_sign_error = '●' " Less aggressive than the default '>>'
 let g:ale_sign_warning = '.'
