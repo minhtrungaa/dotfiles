@@ -58,7 +58,8 @@ call plug#end()
 
 " vim key binding
 " FZF
-nnoremap <c-p> :FZF<cr>
+"nnoremap <c-p> :FZF<cr>
+silent! nmap <C-P> :GFiles<CR>
 "enable keyboard shortcuts
 let g:tern_map_keys=1
 ""show argument hints
@@ -106,8 +107,14 @@ filetype plugin indent on
 
 let g:onedark_termcolors = 256
 
-set listchars=eol:$,tab:▶‒,nbsp:∙,trail:∙,extends:▶,precedes:◀
 set list
+"set listchars=eol:¬,tab:▸\
+if has('gui_running')
+    set listchars=eol:¬,tab:▶\ ,trail:·,extends:\#,nbsp:.
+else
+    set listchars=tab:→\ ,eol:¬,trail:⋅,extends:❯,precedes:❮,nbsp:.
+    set showbreak=↪
+endif
 let &showbreak = '^'
 " javascript lint setup
 let g:ale_sign_error = '●' " Less aggressive than the default '>>'
