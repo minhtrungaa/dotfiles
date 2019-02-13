@@ -1,6 +1,6 @@
 export ZSH=$HOME/.oh-my-zsh
 export JAVA_HOME="/media/trung/OS/dev-tools/jdk1.8.0_202"
-export ANDROID_HOME="/media/trung/OS/dev-tools/android-linux/sdk"
+export ANDROID_HOME="/media/trung/OS/dev-tools/sdk"
 export PATH=$PATH:$JAVA_HOME
 export PATH=$PATH:$JAVA_HOME/bin
 export PATH=$PATH:$ANDROID_HOME/emulator
