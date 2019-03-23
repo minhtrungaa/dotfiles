@@ -22,7 +22,6 @@ plugins=(
 #alias tmux="TERM=screen-256color-bce tmux"
 alias vim="mvim -v"
 
-source ~/dotfiles/zsh/keybindings.sh
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=250'
 
@@ -30,5 +29,6 @@ zle-line-init() {
     zle autosuggest-start
 }
 zle -N zle-line-init
-
 source $ZSH/oh-my-zsh.sh
+
+source ~/dotfiles/zsh/keybindings.sh
