@@ -32,3 +32,5 @@ zle -N zle-line-init
 source $ZSH/oh-my-zsh.sh
 
 source ~/dotfiles/zsh/keybindings.sh
+
+alias android-studio="open -a /Applications/Android\ Studio.app"
