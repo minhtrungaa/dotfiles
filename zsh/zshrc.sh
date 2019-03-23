@@ -1,5 +1,5 @@
 export ZSH=$HOME/.oh-my-zsh
-export ANDROID_HOME="/Users/trungnhm/Library/Android/sdk"
+export ANDROID_HOME="/Users/trungnguyen/Library/Android/sdk"
 export PATH=$PATH:$ANDROID_HOME/emulator
 export PATH=$PATH:$ANDROID_HOME/tools
 export PATH=$PATH:$ANDROID_HOME/tools/bin
@@ -22,5 +22,13 @@ plugins=(
 #alias tmux="TERM=screen-256color-bce tmux"
 alias vim="mvim -v"
 
-source $ZSH/oh-my-zsh.sh
 source ~/dotfiles/zsh/keybindings.sh
+source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=250'
+
+zle-line-init() {
+    zle autosuggest-start
+}
+zle -N zle-line-init
+
+source $ZSH/oh-my-zsh.sh
