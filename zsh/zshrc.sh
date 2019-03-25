@@ -5,6 +5,7 @@ export PATH=$PATH:$ANDROID_HOME/tools
 export PATH=$PATH:$ANDROID_HOME/tools/bin
 export PATH=$PATH:$ANDROID_HOME/platform-tools
 export PATH=$HOME/bin:usr/local/bin:$PATH
+export PATH=/usr/local/sbin:$PATH # For openvpn using brew
 export PATH=$HOME/.local/share/umake/bin:$PATH
 export TERM=xterm-256color
 export TERMINAL="terminator"
@@ -21,6 +22,8 @@ plugins=(
 
 #alias tmux="TERM=screen-256color-bce tmux"
 alias vim="mvim -v"
+
+alias cocos-creator="/Applications/CocosCreator.app/Contents/MacOS/CocosCreator"
 
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=250'
